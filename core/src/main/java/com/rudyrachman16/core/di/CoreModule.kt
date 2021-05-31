@@ -10,6 +10,7 @@ import com.rudyrachman16.core.data.db.room.MealDB
 import com.rudyrachman16.core.domain.repository.IMealRepositories
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
+import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -31,16 +32,20 @@ val dbModule = module {
 
 val apiModule = module {
     single {
+        val certificate = CertificatePinner.Builder()
+            .add(BuildConfig.BASE_URL, "sha256/pz7CjjOO6yeiHWrcJ+RWljKC2pBYw+9O7XwRIl7HLn8=")
+            .build()
         OkHttpClient.Builder().apply {
             addInterceptor(
                 if (BuildConfig.DEBUG) HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
                 else HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC)
             )
+            certificatePinner(certificate)
         }.build()
     }
     single {
         Retrofit.Builder().apply {
-            baseUrl(BuildConfig.BASE_URL)
+            baseUrl("https://${BuildConfig.BASE_URL}/api/json/v1/1/")
             addConverterFactory(GsonConverterFactory.create())
             client(get())
         }.build().create(ApiService::class.java)
