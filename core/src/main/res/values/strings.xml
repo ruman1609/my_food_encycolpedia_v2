@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="meal_thumbnail">Meal Thumbnail</string>
+    <string name="ingredient_thumbnail">Ingredient Thumbnail</string>
+</resources>

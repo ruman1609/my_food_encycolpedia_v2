@@ -1,0 +1,4 @@
+rootProject.name = "My Food Encyclopedia"
+include ':app'
+include ':core'
+include ':favorite'

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">My Food Encyclopedia</string>
+    <string name="logo">Logo</string>
+    <string name="recommended">Recommended\n%s Menu</string>
+    <string name="search">Search</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="instructions">Instructions</string>
+    <string name="you_can_make_s_for_the_drink">You can make %s for the drink</string>
+    <string name="source_s">Source: %s</string>
+    <string name="favorite_click">Favorite Click</string>
+    <string name="error_status">Something is wrong with internet.\nThe data is not up-to-date\nError: %s</string>
+    <string name="empty_list">Empty List</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="search_hint">Search Food</string>
+</resources>
