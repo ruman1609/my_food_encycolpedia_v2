@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="?attr/colorOnBackground"
     android:orientation="vertical"
-    tools:context=".detail.DetailActivity">
+    tools:context=".detail.DetailActivity"
+    tools:ignore="Overdraw">
 
     <include
         android:id="@+id/detToolbar"

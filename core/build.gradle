@@ -22,12 +22,14 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_URL", BASE_URL
             buildConfigField "String", "INGREDIENT_URL", INGREDIENT_URL
         }
         debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_URL", BASE_URL
             buildConfigField "String", "INGREDIENT_URL", INGREDIENT_URL
         }
@@ -67,4 +69,8 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
     api "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+
+    // SQLCipher
+    implementation 'net.zetetic:android-database-sqlcipher:4.4.3'
+    implementation "androidx.sqlite:sqlite-ktx:2.1.0"
 }

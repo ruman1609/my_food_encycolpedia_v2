@@ -8,6 +8,8 @@ import com.rudyrachman16.core.data.api.retrofit.ApiService
 import com.rudyrachman16.core.data.db.RoomGetData
 import com.rudyrachman16.core.data.db.room.MealDB
 import com.rudyrachman16.core.domain.repository.IMealRepositories
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -17,9 +19,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 val dbModule = module {
     single {
+        val passphrase: ByteArray =
+            SQLiteDatabase.getBytes("Rudy Rachman Dicoding Submission 2".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(), MealDB::class.java, "MealDB"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration().openHelperFactory(factory).build()
     }
     single { get<MealDB>().getDao() }
 }

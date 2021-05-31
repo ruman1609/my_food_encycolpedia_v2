@@ -1,5 +1,8 @@
 package com.rudyrachman16.core.data.api.response
 
+import androidx.annotation.Keep
+
+@Keep
 data class MealResponse(
     val idMeal: String? = null,
     val strMeal: String? = null,

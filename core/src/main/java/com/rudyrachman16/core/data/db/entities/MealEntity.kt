@@ -1,8 +1,10 @@
 package com.rudyrachman16.core.data.db.entities
 
+import androidx.annotation.Keep
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+@Keep
 @Entity(tableName = "meal")
 data class MealEntity(
     @PrimaryKey

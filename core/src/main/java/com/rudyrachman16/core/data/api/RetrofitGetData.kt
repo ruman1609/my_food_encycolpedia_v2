@@ -18,7 +18,7 @@ class RetrofitGetData(private val apiService: ApiService) {
             else emit(ApiStatus.Empty)
         } catch (e: Exception) {
             emit(ApiStatus.Failed(e.toString()))
-            Log.d("RetrofitGetData", e.toString())
+            e.printStackTrace()
         }
     }.flowOn(Dispatchers.IO)
 
