@@ -20,6 +20,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        //noinspection JcenterRepositoryObsolete
         jcenter()  // for youtube player don't delete it except it's dropped forever
     }
 }

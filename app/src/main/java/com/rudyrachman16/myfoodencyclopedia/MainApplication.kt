@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.rudyrachman16.myfoodencyclopedia
 
 import android.app.Application
