@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Food Encyclopedia</string>
+    <string name="app_name">My Food Encyclopedia V2</string>
     <string name="logo">Logo</string>
     <string name="recommended">Recommended\n%s Menu</string>
     <string name="search">Search</string>
