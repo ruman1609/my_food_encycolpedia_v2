@@ -28,7 +28,7 @@ android {
             buildConfigField "String", "INGREDIENT_URL", INGREDIENT_URL
         }
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_URL", BASE_URL
             buildConfigField "String", "INGREDIENT_URL", INGREDIENT_URL

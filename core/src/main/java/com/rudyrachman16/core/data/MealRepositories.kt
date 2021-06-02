@@ -66,7 +66,7 @@ class MealRepositories(
         state.debounce(300).distinctUntilChanged().mapLatest {
             api.getSearch(it).meals?.map { mr ->
                 MapVal.mealResToEnt(
-                    mr, db.getDetailOrNull(mr.idMeal!!).first()
+                    mr, db.getDetailOrNull(mr.idMeal ?: "").first()
                 )
             }?.map { mt -> MapVal.mealEntToDom(mt) }
         }.flowOn(Dispatchers.IO)

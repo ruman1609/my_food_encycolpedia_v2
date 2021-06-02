@@ -67,7 +67,7 @@ class RecommendedFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
         binding = null
+        super.onDestroyView()
     }
 }

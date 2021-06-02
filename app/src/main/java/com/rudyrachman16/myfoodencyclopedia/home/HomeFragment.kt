@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.rudyrachman16.core.utils.CategorySetter
@@ -25,7 +24,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bind.homeVP.adapter = TabAdapter(requireActivity() as AppCompatActivity)
+        bind.homeVP.adapter = TabAdapter(parentFragmentManager, lifecycle)
         TabLayoutMediator(bind.homeTab, bind.homeVP) { tab, pos ->
             tab.text =
                 if (pos == 0) getString(TabAdapter.TAB_TITLES[pos], CategorySetter.getCategory())
@@ -34,7 +33,8 @@ class HomeFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
+        bind.homeVP.adapter = null
         binding = null
+        super.onDestroyView()
     }
 }
