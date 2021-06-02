@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bind.homeVP.adapter = TabAdapter(parentFragmentManager, lifecycle)
+        bind.homeVP.adapter = TabAdapter(childFragmentManager, lifecycle)
         TabLayoutMediator(bind.homeTab, bind.homeVP) { tab, pos ->
             tab.text =
                 if (pos == 0) getString(TabAdapter.TAB_TITLES[pos], CategorySetter.getCategory())
